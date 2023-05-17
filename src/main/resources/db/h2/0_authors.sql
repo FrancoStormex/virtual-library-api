@@ -1,0 +1,1 @@
+insert into author(id,birth_date,gender,name,nationality,profession,creation_date,last_update) values(1,'1890-10-20',0,'H. P. Lovecraft','US','Writer',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);

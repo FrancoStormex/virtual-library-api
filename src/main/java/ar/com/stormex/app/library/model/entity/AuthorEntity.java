@@ -1,6 +1,7 @@
 package ar.com.stormex.app.library.model.entity;
 
 import ar.com.stormex.app.library.common.BaseTimeStamp;
+import ar.com.stormex.app.library.model.enums.GenderEnum;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -27,7 +28,7 @@ public class AuthorEntity extends BaseTimeStamp {
     private LocalDate birthDate;
 
     @Column(name = "gender")
-    private String gender;
+    private GenderEnum gender;
 
     @Column(name = "name")
     private String name;

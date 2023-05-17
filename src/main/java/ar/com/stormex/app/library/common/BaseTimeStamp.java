@@ -21,6 +21,8 @@ import java.util.Date;
  * Abstract class with the information for the creation and update of date and time in the database.
  * It is used as the base for entities.
  * Allows to automatically keep track of the date and time of creation or last update.
+ *
+ * @author franco.martinez
  */
 @Data
 @EqualsAndHashCode

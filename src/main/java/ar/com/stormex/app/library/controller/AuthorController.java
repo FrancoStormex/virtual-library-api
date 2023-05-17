@@ -18,8 +18,6 @@ import java.util.List;
  *
  * EN:
  * API oriented to manage the authors.
- *
- * @author franco.martinez
  */
 @RequestMapping("/authors")
 @RestController
@@ -39,6 +37,18 @@ public class AuthorController {
     public ResponseObject<AuthorDto> update(@RequestBody AuthorUpdateDto authorUpdateDto) {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "createDto: " + authorUpdateDto);
         return this.service.update(authorUpdateDto);
+    }
+
+    @DeleteMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseObject<String> delete(@PathVariable("id") Long id) {
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
+        return this.service.delete(id);
+    }
+
+    @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseObject<AuthorDto> findById (@PathVariable("id") Long id) {
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
+        return this.service.findById(id);
     }
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
