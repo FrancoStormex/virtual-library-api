@@ -1,5 +1,6 @@
 package ar.com.stormex.app.library.mapper;
 
+import ar.com.stormex.app.library.common.BaseMapper;
 import ar.com.stormex.app.library.dto.AuthorDto;
 import ar.com.stormex.app.library.dto.create.AuthorCreateDto;
 import ar.com.stormex.app.library.dto.update.AuthorUpdateDto;
@@ -11,14 +12,10 @@ import org.mapstruct.ReportingPolicy;
 import java.util.List;
 
 /**
- * ES:
- * Mapeador de los autores.
- *
- * EN:
- * Mapper of the authors.
+ * Mapper of the authors. /Mapeador de los autores.
  */
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface AuthorMapper {
+public interface AuthorMapper extends BaseMapper<AuthorDto, AuthorEntity, AuthorCreateDto, AuthorUpdateDto> {
 
     AuthorDto toDto(AuthorEntity authorEntity);
 

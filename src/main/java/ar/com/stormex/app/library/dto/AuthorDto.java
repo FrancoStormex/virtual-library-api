@@ -5,11 +5,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 /**
- * ES:
- * DTO general para transmitir la información de los autores.
- *
- * EN:
- * General DTO to transmit the information of the authors.
+ * DTO to transmit the general information of the authors. DTO para transmitir la información general de los autores.
  */
 @Data
 public class AuthorDto {

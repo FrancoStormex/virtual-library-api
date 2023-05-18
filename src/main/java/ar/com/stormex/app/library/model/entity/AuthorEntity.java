@@ -1,5 +1,6 @@
 package ar.com.stormex.app.library.model.entity;
 
+import ar.com.stormex.app.library.common.BaseObject;
 import ar.com.stormex.app.library.common.BaseTimeStamp;
 import ar.com.stormex.app.library.model.enums.GenderEnum;
 import jakarta.persistence.*;
@@ -8,16 +9,12 @@ import lombok.Data;
 import java.time.LocalDate;
 
 /**
- * ES:
- * Entidad con el modelo de los autores.
- *
- * EN:
- * Entity with the authors' model.
+ * Entity with the authors' model. / Entidad con el modelo de los autores.
  */
 @Data
 @Entity
 @Table(name = "author")
-public class AuthorEntity extends BaseTimeStamp {
+public class AuthorEntity extends BaseTimeStamp implements BaseObject<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

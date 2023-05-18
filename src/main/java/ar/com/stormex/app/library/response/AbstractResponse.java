@@ -4,9 +4,7 @@ public class AbstractResponse {
 
     /**
      * ES:
-     * Crea un objeto de respuesta cuando la solicitud al servidor ha tenido exito.
-     * EN:
-     * Create a response object when the request to the server has been successful.
+     * Create a response object when the request to the server has been successful. / Crea un objeto de respuesta cuando la solicitud al servidor ha tenido exito.
      * @param dto Generic DTO.
      * @param message Response message.
      * @param statusCode Response code.
@@ -23,10 +21,7 @@ public class AbstractResponse {
     }
 
     /**
-     * ES:
-     * Crea un objeto de respuesta cuando hay un conflicto al procesar la solicitud.
-     * EN:
-     * Returns a response object of the generic type, whose interior contains the complete information of the response.
+     * Returns a response object of the generic type, whose interior contains the complete information of the response. / Crea un objeto de respuesta cuando hay un conflicto al procesar la solicitud.
      * @param message Response message.
      * @param statusCode Response code.
      * @param <T> Generic type parameter.

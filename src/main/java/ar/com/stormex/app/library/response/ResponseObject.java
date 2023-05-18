@@ -3,12 +3,7 @@ package ar.com.stormex.app.library.response;
 import lombok.Data;
 
 /**
- * ES:
- * Clase genérica  que representa un objeto de respuesta que puede trabajar con diferentes tipos de datos.
- *
- * EN:
- * Generic class that represents a response object that can work with different types of data.
- *
+ * Generic class that represents a response object that can work with different types of data.¨/ Clase genérica  que representa un objeto de respuesta que puede trabajar con diferentes tipos de datos.
  * @param <T> a generic parameter.
  */
 @Data
