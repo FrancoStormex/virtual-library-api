@@ -1,9 +1,11 @@
 package ar.com.stormex.app.library.response;
 
+/**
+ * Class dedicated to the construction of answers. / Clase dedicada a la construcción de las respuestas.
+ */
 public class AbstractResponse {
 
     /**
-     * ES:
      * Create a response object when the request to the server has been successful. / Crea un objeto de respuesta cuando la solicitud al servidor ha tenido exito.
      * @param dto Generic DTO.
      * @param message Response message.

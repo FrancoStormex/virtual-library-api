@@ -46,39 +46,39 @@ public class AuthorController {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "createDto: " + authorUpdateDto);
         return this.service.update(authorUpdateDto);
     }
-//
-//    /**
-//     * It allows deleting an author registered in the database. / Permite borrar un autor registrado en base de datos.
-//     *
-//     * @param id The id of the author to delete. / El id del autor a borrar.
-//     * @return Deleted message. / Mensaje de eliminado.
-//     */
-//    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseObject<String> delete(@PathVariable("id") Long id) {
-//        log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
-//        return this.service.delete(id);
-//    }
-//
-//    /**
-//     * It allows to search for an author by id. / Permite buscar un autor por id.
-//     *
-//     * @param id The id of the author to find. / El id del autor a buscar.
-//     * @return The complete information of the author that is sought. / La información completa del autor que se busca.
-//     */
-//    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseObject<AuthorDto> findById(@PathVariable("id") Long id) {
-//        log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
-//        return this.service.findById(id);
-//    }
-//
-//    /**
-//     * It allows you to search for all authors. / Permite realizar la búsqueda de todos los autores.
-//     *
-//     * @return A list of authors. / Una lista de autores.
-//     */
-//    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseObject<List<AuthorDto>> findAll() {
-//        log.info(Thread.currentThread().getStackTrace()[1].getMethodName());
-//        return this.service.findAll();
-//    }
+
+    /**
+     * It allows to search for an author by id. / Permite buscar un autor por id.
+     *
+     * @param id The id of the author to find. / El id del autor a buscar.
+     * @return The complete information of the author that is sought. / La información completa del autor que se busca.
+     */
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseObject<AuthorDto> findById(@PathVariable("id") Long id) {
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
+        return this.service.findById(id);
+    }
+
+    /**
+     * It allows deleting an author registered in the database. / Permite borrar un autor registrado en base de datos.
+     *
+     * @param id The id of the author to delete. / El id del autor a borrar.
+     * @return Deleted message. / Mensaje de eliminado.
+     */
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseObject<String> delete(@PathVariable("id") Long id) {
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
+        return this.service.delete(id);
+    }
+
+    /**
+     * It allows you to search for all authors. / Permite realizar la búsqueda de todos los autores.
+     *
+     * @return A list of authors. / Una lista de autores.
+     */
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseObject<List<AuthorDto>> findAll() {
+        log.info(Thread.currentThread().getStackTrace()[1].getMethodName());
+        return this.service.findAll();
+    }
 }

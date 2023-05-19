@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * Generic class that represents a response object that can work with different types of data.¨/ Clase genérica  que representa un objeto de respuesta que puede trabajar con diferentes tipos de datos.
- * @param <T> a generic parameter.
+ * @param <T> A generic parameter. / Un parametro generico.
  */
 @Data
 public class ResponseObject<T> {
