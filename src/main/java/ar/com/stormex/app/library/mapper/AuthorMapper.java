@@ -27,5 +27,5 @@ public interface AuthorMapper extends BaseMapper<AuthorDto, AuthorEntity, Author
 
     AuthorEntity fromCreateDtoToEntity(AuthorCreateDto authorCreateDto);
 
-    AuthorEntity merge(@MappingTarget AuthorEntity target, AuthorUpdateDto source);
+    AuthorEntity merge(@MappingTarget AuthorEntity entity, AuthorUpdateDto update);
 }
