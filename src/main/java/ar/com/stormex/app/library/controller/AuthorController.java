@@ -5,8 +5,15 @@ import ar.com.stormex.app.library.dto.create.AuthorCreateDto;
 import ar.com.stormex.app.library.dto.update.AuthorUpdateDto;
 import ar.com.stormex.app.library.response.ResponseObject;
 import ar.com.stormex.app.library.service.AuthorService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +36,8 @@ public class AuthorController {
      * @param authorCreateDto The author information to create. / La información del autor que se va a crear.
      * @return Complete author information created. / La información completa del autor creado.
      */
+    @Operation(summary = "Create an author")
+    @ApiResponses(value = { @ApiResponse(responseCode = "201", description = "Author Created") })
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseObject<AuthorDto> create(@RequestBody AuthorCreateDto authorCreateDto) {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "createDto: " + authorCreateDto);
@@ -41,6 +50,8 @@ public class AuthorController {
      * @param authorUpdateDto The author information to update. / La información del autor que se va a actualizar.
      * @return Complete author information updated. / La información completa del autor actualizado.
      */
+    @Operation(summary = "Update the information of an author")
+    @ApiResponse(responseCode = "200", description = "Author updated")
     @PutMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseObject<AuthorDto> update(@RequestBody AuthorUpdateDto authorUpdateDto) {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "createDto: " + authorUpdateDto);
@@ -53,8 +64,10 @@ public class AuthorController {
      * @param id The id of the author to find. / El id del autor a buscar.
      * @return The complete information of the author that is sought. / La información completa del autor que se busca.
      */
+    @Operation(summary = "Search an author by id")
+    @ApiResponse(responseCode = "200", description = "Author found")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseObject<AuthorDto> findById(@PathVariable("id") Long id) {
+    public ResponseObject<AuthorDto> findById(@Parameter(description = "The id of the author to search", example = "1") @PathVariable("id") Long id) {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
         return this.service.findById(id);
     }
@@ -65,8 +78,10 @@ public class AuthorController {
      * @param id The id of the author to delete. / El id del autor a borrar.
      * @return Deleted message. / Mensaje de eliminado.
      */
+    @Operation(summary = "Delete an author by id")
+    @ApiResponse(responseCode = "204", description = "Author deleted")
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseObject<String> delete(@PathVariable("id") Long id) {
+    public ResponseObject<String> delete(@Parameter(description = "The id of the author to delete", example = "1") @PathVariable("id") Long id) {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName() + "id: " + id);
         return this.service.delete(id);
     }
@@ -76,6 +91,8 @@ public class AuthorController {
      *
      * @return A list of authors. / Una lista de autores.
      */
+    @Operation(summary = "Search all authors")
+    @ApiResponse(responseCode = "200", description = "Authors list")
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseObject<List<AuthorDto>> findAll() {
         log.info(Thread.currentThread().getStackTrace()[1].getMethodName());
